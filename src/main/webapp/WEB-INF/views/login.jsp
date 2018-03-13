@@ -59,6 +59,7 @@
 					    <li><a href="${contextPath}/login">Modified</a></li>
 	                        	 <li><a href="${contextPath}/login">LOGIN</a></li>
 	                        	 <li><a href="${contextPath}/registration">SIGN UP</a></li>
+					 <li><a href="${contextPath}/registration">line UP</a></li>
 	                       	 	</ul>
                             </div>
                             
