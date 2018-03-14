@@ -74,7 +74,7 @@
 <div class="container">
 	
     <form method="POST" action="${contextPath}/login" class="form-signin">
-        <h2 class="form-heading" align="center"> LOGIN ID change 03:30 03:55 </h2>
+        <h2 class="form-heading" align="center"> NEW LOGIN </h2>
 		<img  class="logo" src="${contextPath}/resources/Images/visualpathlogo3.png" />
         <div class="form-group ${error != null ? 'has-error' : ''}">
             <span>${message}</span>
