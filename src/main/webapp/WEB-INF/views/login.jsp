@@ -52,11 +52,14 @@
                                 <li><a href="#">TECHNOLOGIES</a></li>
                                 <li><a href="#">ABOUT</a></li>
                                 <li><a href="#">BLOG</a></li>
+				<li><a href="#">GLOG</a></li>
                             </ul>
                             <div class="navbar-collapse navbar-right collapse">
 	                            <ul class="nav navbar-nav">
+					    <li><a href="${contextPath}/login">Modified</a></li>
 	                        	 <li><a href="${contextPath}/login">LOGIN</a></li>
 	                        	 <li><a href="${contextPath}/registration">SIGN UP</a></li>
+					 <li><a href="${contextPath}/registration">line UP</a></li>
 	                       	 	</ul>
                             </div>
                             
@@ -71,7 +74,7 @@
 <div class="container">
 	
     <form method="POST" action="${contextPath}/login" class="form-signin">
-        <h2 class="form-heading" align="center"> LOGIN </h2>
+        <h2 class="form-heading" align="center"> NEW LOGIN </h2>
 		<img  class="logo" src="${contextPath}/resources/Images/visualpathlogo3.png" />
         <div class="form-group ${error != null ? 'has-error' : ''}">
             <span>${message}</span>
