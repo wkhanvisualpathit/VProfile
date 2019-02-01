@@ -156,5 +156,15 @@
 		</plugin>
         </plugins>
     </build>
+	<distributionmanagement>
+		<repository>
+			<id>deployment</id>
+			<name>Internal Releases</name>
+			<url>http://18.216.99.102:8081/nexus/content/repositories/1/</url>
+		</repository>
+	</distributionmanagement>
+	
+	
+	
 </project>
 
