@@ -6,6 +6,7 @@
     <packaging>war</packaging>
     <version>v1</version>
     <name>Visualpathit VProfile Webapp</name>
+    <!-- Demo on github webhook -->	
     <url>http://maven.apache.org</url>
     <properties>
         <spring.version>4.2.0.RELEASE</spring.version>
