@@ -37,3 +37,12 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+
+          - task: KubernetesManifest@0
+            inputs:
+              action: 'deploy'
+              kubernetesServiceConnection: 'AZ-kubernetes-kube-public'
+              manifests: '$(Build.ArtifactStagingDirrectory)/app.yml $(Build.ArtifactStagingDirrectory)/service.yml'
+              containers: 'docker100.azurecr.io/ thimmaiahoutvprofile:latest'
+
+
