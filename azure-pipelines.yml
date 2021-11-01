@@ -36,6 +36,19 @@ stages:
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
-          $(tag)
+          $(tag)  
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'Vprofile'
+    Contents: |
+      app.yml
+      service.yml
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+
+
+
+
+
 
 
