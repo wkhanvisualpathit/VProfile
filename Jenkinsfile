@@ -1,13 +1,15 @@
 pipeline {
   agent any
   stages{
-    stage ('checkout scm'){
+    stage ('checkout scm') {
         steps{
            git 'https://github.com/Gchennareddy/VProfile.git'
         }
     }
     stage ('build') {
-       sh "mvn package"
+        steps {
+          sh "mvn package"
+        }
     }
   }
 }
