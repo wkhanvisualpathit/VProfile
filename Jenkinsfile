@@ -73,8 +73,8 @@ pipeline {
     stage('deploy to tomcat'){
      steps{
      deploy adapters: [tomcat8(credentialsId: 'tomcat-creds', path: '', url: 'https://172.31.3.167:8080')], contextPath: 'january-9', war: 'target/vprofile-v1.war'
-}
-}
+     } 
+    } 
     }
 }
 
