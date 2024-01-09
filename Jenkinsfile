@@ -29,7 +29,7 @@ pipeline {
         protocol: 'http',
         nexusUrl: '172.31.8.147:8081',
         groupId: 'DEV',
-        version: $'BUILD_NUMBER',
+        version: '$BUILD_NUMBER',
         repository: 'Vprofile-repo',
         credentialsId: 'nexus-creds',
         artifacts: [
