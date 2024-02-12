@@ -48,8 +48,8 @@ pipeline {
      steps{
        script { 
            withDockerRegistry(credentialsId: 'dock-creds') {
-             sh "docker build -t vprofile-image ."
-             sh "docker run -itd vprofile-image"
+             sh "docker build -t komal921/docker-test ."
+             sh "docker run -itd komal921/docker-test"
       }
      }
     }
