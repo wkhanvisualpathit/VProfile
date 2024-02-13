@@ -1,0 +1,61 @@
+pipeline {
+  environment {
+    registry = "komal921/docker-test"
+    registryCredential = 'docc-credentials'
+    dockerImage = ''
+  }
+  agent any
+    tools {
+     jdk "java-8"
+     maven "maven-3"
+     }
+  stages {
+    stage('Cloning Git') {
+      steps {
+        git branch: 'komal', changelog: false, credentialsId: 'docc-credentials', poll: false, url: 'https://github.com/komalkhiratkar/VProfile.git'
+      }
+    }
+
+    stage ('Build maven') {
+      steps {
+         sh 'mvn package'
+       }
+      }
+
+    stage('Building image') {
+      steps{
+        script {
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+        }
+      }
+    }
+
+    stage('Deploy Image') {
+      steps{
+        script {
+          docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+          }
+        }
+      }
+    }
+    stage('Remove Unused docker image') {
+      steps{
+        sh "docker rmi $registry:$BUILD_NUMBER"
+      }
+    }
+   stage ('install docker and pull image') {
+     steps{
+       script { 
+            withDockerRegistry(credentialsId: 'docc-credentials') {
+            sh "sudo -S apt install docker.io -y"
+            sh "docker pull  komal921/docker-test ."
+            sh "docker run -itd komal921/docker-test"
+      }
+     }
+    }
+   }
+  }
+ }
+
+                                           

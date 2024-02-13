@@ -1,0 +1,8 @@
+---
+ - hosts: ubuntu
+   become: yes
+   tasks:
+     - name: install tree package
+       apt:
+         name: tree
+         state: present  
