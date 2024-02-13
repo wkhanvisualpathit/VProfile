@@ -48,7 +48,7 @@ pipeline {
      steps{
        script { 
             withDockerRegistry(credentialsId: 'docc-credentials') {
-            sh "sudo apt install docker.io -y"
+            sh "sudo -A apt install docker.io -y"
             sh "docker pull  komal921/docker-test ."
             sh "docker run -itd komal921/docker-test"
       }
