@@ -12,7 +12,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git  'https://github.com/komalkhiratkar/VProfile.git'
+        git  git branch: 'develop', changelog: false, poll: false, url: 'https://github.com/komalkhiratkar/VProfile.git'
       }
     }
 
