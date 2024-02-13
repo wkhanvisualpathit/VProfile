@@ -1,7 +1,7 @@
 pipeline {
   environment {
     registry = "komal921/docker-test"
-    reigistryCredential = 'dock-creds'
+    reigistryCredential = 'docc-credentials'
     dockerImage = ''
   }
   agent any
