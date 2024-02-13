@@ -47,7 +47,7 @@ pipeline {
    stage ('pull and run docker latest image') {
      steps{
        script { 
-           withDockerRegistry(credentialsId: 'dock-creds') {
+            withDockerRegistry(credentialsId: 'docc-credentials') {
              sh "docker build -t komal921/docker-test ."
              sh "docker run -itd komal921/docker-test"
       }
